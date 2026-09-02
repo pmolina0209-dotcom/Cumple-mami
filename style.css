@@ -31,7 +31,7 @@ body {
   100% { transform: translateY(0); }
 }
 
-/* Fondo de orquídeas (orquidea.png en raíz) */
+/* Fondo de orquídeas */
 .orchids {
   position: fixed;
   top: 0;
@@ -66,12 +66,13 @@ body {
   margin-top: 20px;
 }
 
-/* Imagen principal (en raíz) */
+/* Imagen principal */
 .principal-img {
   width: 100%;
   border-radius: 18px;
   margin-bottom: 15px;
   animation: imgGlow 3s ease-in-out infinite;
+  display: block;
 }
 
 @keyframes imgGlow {
@@ -120,7 +121,7 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   color: #444;
-  text-align: left;
+  text-align: justify; /* ✅ Justificado */
 }
 
 /* Botones */
@@ -164,8 +165,4 @@ body {
   z-index: 100;
 }
 
-.surprise-content {
-  background: #fff;
-  padding: 25px;
-  width: 85%;
-  max
+.sur
