@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at top, #ffe082, #ff9a9e, #f48fb1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Texto animado */
+.animated-title {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 20px;
+  animation: glow 2s ease-in-out infinite, floatTitle 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #fff, 0 0 20px #ff4081, 0 0 30px #ff80ab; }
+  50% { text-shadow: 0 0 20px #fff, 0 0 30px #ff1744, 0 0 40px #ff4081; }
+  100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff4081, 0 0 30px #ff80ab; }
+}
+
+@keyframes floatTitle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Tarjeta */
+.card {
+  background: #ffffffee;
+  max-width: 480px;
+  width: 90%;
+  padding: 24px 20px;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  text-align: center;
+  border: 3px solid #ffca28;
+  position: relative;
+  z-index: 10;
+  margin-top: 20px;
+}
+
+/* Imagen principal con brillo animado */
+.principal-img {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 15px;
+  animation: imgGlow 3s ease-in-out infinite;
+}
+
+@keyframes imgGlow {
+  0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+}
+
+/* Textos */
+.title {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+  color: #e53935;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #fb8c00;
+}
+
+.decor {
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  text-align: left;
+}
+
+/* Botones */
+.video-btn, .surprise-btn {
+  background: #ff7043;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s;
+  display: block;
+  width: 100%;
+}
+
+.video-btn:hover, .surprise-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Pie */
+.footer {
+  margin-top: 22px;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: right;
+}
+
+/* Confeti */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #ff1744 4px, transparent 4px),
+    radial-gradient(circle, #ffea00 4px, transparent 4px),
+    radial-gradient(circle, #00e5ff 4px, transparent 4px),
+    radial-gradient(circle, #76ff03 4px, transparent 4px);
+  background-size: 40px 40px;
+  animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+  0% { background-position: 0 0, 40px 40px, 80px 80px, 120px 120px; }
+  100% { background-position: 0 600px, 40px 640px, 80px 680px, 120px 720px; }
+}
+
+/* Globos animados */
+.balloon {
+  position: fixed;
+  font-size: 2.5rem;
+  animation: float 6s linear infinite;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.b1 { left: 10%; animation-duration: 7s; }
+.b2 { left: 50%; animation-duration: 9s; }
+.b3 { left: 80%; animation-duration: 6s; }
+
+@keyframes float {
+  0% { bottom: -10%; }
+  100% { bottom: 110%; }
+}
+
+/* Mensaje sorpresa */
+.surprise {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.surprise-content {
+  background: #fff;
+  padding: 25px;
+  width: 85%;
+  max-width: 400px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+  margin-top: 20px;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+

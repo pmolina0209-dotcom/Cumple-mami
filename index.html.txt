@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 ¡Feliz Cumpleaños! 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Texto animado -->
+  <h1 class="animated-title">🎉 Feliz Cumpleaños 🎉</h1>
+
+  <!-- Globos animados -->
+  <div class="balloon b1">🎈</div>
+  <div class="balloon b2">🎈</div>
+  <div class="balloon b3">🎈</div>
+
+  <!-- Confeti -->
+  <div class="confetti"></div>
+
+  <div class="card">
+
+    <!-- Imagen principal destacada -->
+    <img src="img/principal.jpg" alt="Imagen principal" class="principal-img">
+
+    <div class="decor">🎉🎂✨🎁</div>
+
+    <h1 class="title">¡Feliz Cumpleaños!</h1>
+    <h2 class="subtitle">Hoy celebro tu vida y todo lo que eres para mí</h2>
+
+    <p class="message">
+      Hoy no solo celebro tu cumpleaños, celebro todo lo que eres para mí.
+      Tu forma de cuidar, de escuchar, de estar incluso cuando no digo nada…
+      eso es un regalo que la vida me dio y que valoro cada día.<br><br>
+      Gracias por tu paciencia, por tus consejos que siempre llegan con cariño,
+      por tu risa que ilumina cualquier momento y por enseñarme, sin palabras,
+      lo que significa amar de verdad.<br><br>
+      Deseo que este nuevo año te devuelva un poquito de todo lo que tú das:
+      tranquilidad, alegría, cariño y momentos que te hagan sentir especial,
+      porque lo eres.<br><br>
+      Feliz cumpleaños, con todo mi corazón. 💛
+    </p>
+
+    <button class="video-btn" onclick="openVideo()">
+      🎬 Ver video especial
+    </button>
+
+    <button class="surprise-btn" onclick="showSurprise()">
+      💛 Mensaje sorpresa
+    </button>
+
+    <p class="footer">
+      Con todo nuestro cariño,<br>
+      <strong>Tu familia</strong>
+    </p>
+  </div>
+
+  <!-- Mensaje sorpresa -->
+  <div id="surprise" class="surprise">
+    <div class="surprise-content">
+      <h2>💛 Mensaje de tu familia 💛</h2>
+      <p>
+        Queremos que sepas que cada día contigo es un regalo.
+        Tu fuerza, tu ternura y tu forma de amar nos inspiran más de lo que imaginas.
+        Gracias por ser el corazón que une a esta familia, por tus abrazos que sanan,
+        tus palabras que iluminan y tu presencia que siempre hace todo más bonito.
+        Te celebramos hoy y siempre, porque eres nuestro orgullo, nuestra alegría
+        y nuestro hogar.  
+        <br><br>
+        Con todo nuestro amor,  
+        <strong>Tu familia</strong>
+      </p>
+      <button class="close-btn" onclick="closeSurprise()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function openVideo() {
+      window.open("https://1drv.ms/v/c/91EA20E7FB7BF08F/IQDbb2AYUkgFTYRH7oP_WPBUAdbnpzDlADBwIlvdrwLEZBY?e=na58Ct", "_blank");
+    }
+
+    function showSurprise() {
+      document.getElementById("surprise").style.display = "flex";
+    }
+
+    function closeSurprise() {
+      document.getElementById("surprise").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
