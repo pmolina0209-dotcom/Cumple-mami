@@ -165,4 +165,7 @@ body {
   z-index: 100;
 }
 
-.surprise
+.surprise-content {
+  background: #fff;
+  padding: 25px;
+  width: 
