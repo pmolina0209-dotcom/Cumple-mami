@@ -110,6 +110,31 @@ body {
 .b2 { left: 50%; animation-duration: 11s; }
 .b3 { left: 80%; animation-duration: 8s; }
 
+/* Textos */
+.title {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+  color: #0066cc;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #3399ff;
+}
+
+.decor {
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  text-align: justify !important;
+}
+
 /* Botones */
 .video-btn, .surprise-btn {
   background: #3399ff;
@@ -127,8 +152,28 @@ body {
   transform: scale(1.05);
 }
 
-/* POPUP general (video y mensaje sorpresa) */
-.popup {
+/* VIDEO dentro de la tarjeta */
+.video-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  padding: 20px;
+  background: #f0f8ff;
+  border: 3px solid #3399ff;
+  border-radius: 18px;
+  animation: slideUp 0.6s ease-out;
+}
+
+.video-frame {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* POPUP mensaje sorpresa */
+.surprise {
   display: none;
   position: fixed;
   top: 0;
@@ -142,8 +187,7 @@ body {
   z-index: 100;
 }
 
-/* Contenido del popup */
-.popup-content {
+.surprise-content {
   background: #f0f8ff;
   padding: 30px;
   width: 90%;
@@ -158,14 +202,6 @@ body {
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Video dentro del popup */
-.video-frame {
-  width: 100%;
-  height: 260px;
-  border-radius: 12px;
-  margin-bottom: 20px;
 }
 
 /* Imagen padres */
