@@ -11,12 +11,15 @@
 
   <h1 class="animated-title">🎉 Feliz Cumpleaños 🎉</h1>
 
+  <!-- Globos -->
   <div class="balloon b1">🎈</div>
   <div class="balloon b2">🎈</div>
   <div class="balloon b3">🎈</div>
 
+  <!-- Fondo -->
   <div class="orchids"></div>
 
+  <!-- Tarjeta -->
   <div class="card">
 
     <img src="principal.jpg" alt="Imagen principal" class="principal-img">
@@ -35,7 +38,7 @@
       Deseo que este nuevo año te devuelva un poquito de todo lo que tú das:
       tranquilidad, alegría, cariño y momentos que te hagan sentir especial,
       porque lo eres.<br><br>
-      Feliz cumpleaños, con todo mi corazón. 💛
+      Feliz cumpleaños, con todo mi corazón. 💙
     </p>
 
     <button class="video-btn" onclick="openVideo()">
@@ -43,7 +46,7 @@
     </button>
 
     <button class="surprise-btn" onclick="showSurprise()">
-      💛 Mensaje sorpresa
+      💙 Mensaje sorpresa
     </button>
 
     <p class="footer">
@@ -55,7 +58,11 @@
   <!-- Mensaje sorpresa -->
   <div id="surprise" class="surprise">
     <div class="surprise-content">
-      <h2>💛 Mensaje de tu familia 💛</h2>
+
+      <h2>💙 Mensaje de tu familia 💙</h2>
+
+      <!-- Foto padres dentro del mensaje sorpresa -->
+      <img src="padres.jpg" alt="Padres" class="parents-img-popup">
 
       <p class="message">
         Queremos que sepas que cada día contigo es un regalo.
@@ -68,7 +75,7 @@
         <strong>Tu familia</strong>
       </p>
 
-      <button class="close-btn" onclick="closeSurprise()">Cerrar mensaje 💛</button>
+      <button class="close-btn" onclick="closeSurprise()">Cerrar mensaje 💙</button>
     </div>
   </div>
 
@@ -91,3 +98,4 @@
 
 </body>
 </html>
+
