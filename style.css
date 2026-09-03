@@ -172,6 +172,26 @@ body {
   transform: scale(1.05);
 }
 
+/* VIDEO dentro de la tarjeta */
+.video-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  padding: 20px;
+  background: #f0f8ff;
+  border: 3px solid #3399ff;
+  border-radius: 18px;
+  animation: slideUp 0.6s ease-out;
+}
+
+.video-frame {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
 /* Imagen padres dentro del popup */
 .parents-container {
   display: flex;
