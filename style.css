@@ -20,7 +20,7 @@ body {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Confeti */
+/* Confeti animado (sin fondo de puntos) */
 .confetti {
   position: fixed;
   top: 0;
@@ -32,33 +32,18 @@ body {
   z-index: 300;
 }
 
-.confetti::before,
-.confetti::after {
-  content: "";
+.confetti span {
   position: absolute;
-  top: -10%;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(circle, #ff6666 6px, transparent 6px),
-    radial-gradient(circle, #66ccff 6px, transparent 6px),
-    radial-gradient(circle, #ffff66 6px, transparent 6px),
-    radial-gradient(circle, #ff99ff 6px, transparent 6px),
-    radial-gradient(circle, #66ff99 6px, transparent 6px);
-  background-size: 20px 20px;
-  animation: confettiFall 6s linear infinite;
-  opacity: 0.8;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color);
+  border-radius: 50%;
+  animation: fall 4s linear infinite;
 }
 
-.confetti::after {
-  animation-duration: 8s;
-  animation-delay: 1s;
-  opacity: 0.6;
-}
-
-@keyframes confettiFall {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(100%); }
+@keyframes fall {
+  0% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
 }
 
 /* Título animado con contorno negro elegante y visible */
@@ -69,14 +54,12 @@ body {
   font-weight: bold;
   margin-top: 20px;
   animation: glow 2s ease-in-out infinite, floatTitle 3s ease-in-out infinite;
-
   text-shadow:
     -3px -3px 0 #000,
      3px -3px 0 #000,
     -3px  3px 0 #000,
      3px  3px 0 #000,
      0 0 8px rgba(0,0,0,0.7);
-
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -295,6 +278,4 @@ body {
 @media (max-width: 480px) {
   .parents-img-popup {
     width: 60%;
-    max-width: 150px;
-  }
-}
+    max-width: 150px
