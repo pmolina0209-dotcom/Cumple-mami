@@ -212,8 +212,11 @@ body.popup-open {
   display: flex;
 }
 
+.video-modal-clear {
+  background: rgba(240,248,255,0.95);
+}
+
 .video-modal-content {
-  background: #f0f8ff;
   padding: 25px;
   width: 90%;
   max-width: 480px;
@@ -224,11 +227,24 @@ body.popup-open {
   animation: slideUp 0.6s ease-out;
 }
 
-.video-frame {
+/* Corrección del velo negro */
+.video-wrapper {
+  position: relative;
   width: 100%;
   height: 260px;
+  overflow: hidden;
   border-radius: 12px;
-  margin-bottom: 20px;
+  background: #000;
+}
+
+.video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 10;
 }
 
 /* Imagen padres dentro del popup */
@@ -314,8 +330,8 @@ body.popup-open {
     font-size: 1.8rem;
   }
 
-  .video-frame {
-    height: 200px;
+  .video-wrapper {
+    height: 220px;
   }
 
   .parents-img-popup {
