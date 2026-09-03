@@ -1,18 +1,24 @@
 /* VIDEO MODAL */
 function openVideoModal() {
   const modal = document.getElementById("videoModal");
+  const frame = document.getElementById("driveVideo");
+
+  // URL con autoplay activado
+  frame.src = "https://drive.google.com/file/d/16m0z2Nm1cUf0Vvuz9g2M7C65RebH2q26/preview?autoplay=1";
+
   modal.classList.add("open");
   document.body.classList.add("popup-open");
 }
 
 function closeVideoModal() {
   const modal = document.getElementById("videoModal");
+  const frame = document.getElementById("driveVideo");
+
   modal.classList.remove("open");
   document.body.classList.remove("popup-open");
 
   // Reinicia el video
-  const frame = document.getElementById("driveVideo");
-  frame.src = frame.src;
+  frame.src = "";
 }
 
 /* POPUP MENSAJE SORPRESA */
