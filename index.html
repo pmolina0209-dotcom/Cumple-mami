@@ -9,6 +9,9 @@
 
 <body class="card-transition">
 
+  <!-- Confeti -->
+  <canvas id="confettiCanvas"></canvas>
+
   <h1 class="animated-title">🎉 Feliz Cumpleaños 🎉</h1>
 
   <!-- Globos -->
@@ -20,7 +23,7 @@
   <div class="orchids"></div>
 
   <!-- Tarjeta -->
-  <div class="card">
+  <div class="card glow-card">
 
     <img src="principal.jpg" alt="Imagen principal" class="principal-img">
 
@@ -51,8 +54,9 @@
       <h2>🎬 Video especial</h2>
 
       <iframe 
+        id="videoFrame"
         class="video-frame"
-        src="https://drive.google.com/file/d/1SxruDwqSyLm-4MHMcswH3Q9CzAlga2Sk/preview"
+        src="https://drive.google.com/file/d/16m0z2Nm1cUf0Vvuz9g2M7C65RebH2q26/preview"
         allow="autoplay"
         allowfullscreen>
       </iframe>
@@ -97,18 +101,66 @@
   </div>
 
   <script>
+    /* VIDEO */
     function toggleVideo() {
-      const video = document.getElementById("videoContainer");
-      video.style.display = (video.style.display === "flex") ? "none" : "flex";
+      const container = document.getElementById("videoContainer");
+      const frame = document.getElementById("videoFrame");
+
+      if (container.classList.contains("open")) {
+        container.classList.remove("open");
+        frame.src = frame.src; // Reinicia el video
+      } else {
+        container.classList.add("open");
+      }
     }
 
+    /* POPUP */
     function showSurprise() {
       document.getElementById("surprise").style.display = "flex";
+      document.body.classList.add("popup-open");
     }
 
     function closeSurprise() {
       document.getElementById("surprise").style.display = "none";
+      document.body.classList.remove("popup-open");
     }
+
+    /* CONFETI */
+    const canvas = document.getElementById("confettiCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const confetti = [];
+    for (let i = 0; i < 120; i++) {
+      confetti.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 6 + 2,
+        dx: Math.random() * 2 - 1,
+        dy: Math.random() * 3 + 1,
+        color: `hsl(${Math.random() * 360}, 80%, 60%)`
+      });
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+
+        c.x += c.dx;
+        c.y += c.dy;
+
+        if (c.y > canvas.height) c.y = -10;
+        if (c.x > canvas.width) c.x = 0;
+        if (c.x < 0) c.x = canvas.width;
+      });
+      requestAnimationFrame(drawConfetti);
+    }
+    drawConfetti();
   </script>
 
 </body>
