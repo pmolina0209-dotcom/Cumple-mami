@@ -1,7 +1,8 @@
+/* Fondo general */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f9c5d1;
+  background: #cfe8ff; /* Azul cielo suave */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Texto animado */
+/* Título animado */
 .animated-title {
   font-size: 2.2rem;
   text-align: center;
@@ -20,9 +21,9 @@ body {
 }
 
 @keyframes glow {
-  0% { text-shadow: 0 0 10px #fff, 0 0 20px #ff80ab; }
-  50% { text-shadow: 0 0 20px #fff, 0 0 30px #ff4081; }
-  100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff80ab; }
+  0% { text-shadow: 0 0 10px #fff, 0 0 20px #80bfff; }
+  50% { text-shadow: 0 0 20px #fff, 0 0 30px #3399ff; }
+  100% { text-shadow: 0 0 10px #fff, 0 0 20px #80bfff; }
 }
 
 @keyframes floatTitle {
@@ -31,7 +32,7 @@ body {
   100% { transform: translateY(0); }
 }
 
-/* Fondo de orquídeas */
+/* Fondo orquídeas */
 .orchids {
   position: fixed;
   top: 0;
@@ -55,12 +56,12 @@ body {
 .card {
   background: #ffffffee;
   max-width: 480px;
-  width: 90%;
+  width: 92%;
   padding: 24px 20px;
   border-radius: 22px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
   text-align: center;
-  border: 3px solid #ffca28;
+  border: 3px solid #3399ff;
   position: relative;
   z-index: 10;
   margin-top: 20px;
@@ -72,44 +73,49 @@ body {
   border-radius: 18px;
   margin-bottom: 15px;
   animation: imgGlow 3s ease-in-out infinite;
-  display: block;
 }
 
 @keyframes imgGlow {
-  0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
-  50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); }
-  100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+  0% { box-shadow: 0 0 15px rgba(173, 216, 230, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(173, 216, 230, 0.8); }
+  100% { box-shadow: 0 0 15px rgba(173, 216, 230, 0.4); }
 }
 
 /* Globos animados */
 .balloon {
   position: fixed;
   font-size: 2.5rem;
-  animation: float 7s linear infinite;
+  animation: float 7s ease-in-out infinite, sway 3s ease-in-out infinite;
   opacity: 0.8;
   z-index: 1;
 }
-
-.b1 { left: 10%; animation-duration: 9s; }
-.b2 { left: 50%; animation-duration: 11s; }
-.b3 { left: 80%; animation-duration: 8s; }
 
 @keyframes float {
   0% { bottom: -10%; }
   100% { bottom: 110%; }
 }
 
+@keyframes sway {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+  100% { transform: translateX(0); }
+}
+
+.b1 { left: 10%; animation-duration: 9s; }
+.b2 { left: 50%; animation-duration: 11s; }
+.b3 { left: 80%; animation-duration: 8s; }
+
 /* Textos */
 .title {
   font-size: 1.9rem;
   margin-bottom: 8px;
-  color: #e53935;
+  color: #0066cc;
 }
 
 .subtitle {
   font-size: 1.1rem;
   margin-bottom: 18px;
-  color: #fb8c00;
+  color: #3399ff;
 }
 
 .decor {
@@ -117,7 +123,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Mensaje principal */
+/* Mensaje */
 .message {
   font-size: 1rem;
   line-height: 1.7;
@@ -127,7 +133,7 @@ body {
 
 /* Botones */
 .video-btn, .surprise-btn {
-  background: #ff7043;
+  background: #3399ff;
   color: white;
   border: none;
   padding: 12px 18px;
@@ -136,7 +142,6 @@ body {
   cursor: pointer;
   margin-top: 20px;
   transition: transform 0.2s;
-  display: block;
   width: 100%;
 }
 
@@ -144,12 +149,13 @@ body {
   transform: scale(1.05);
 }
 
-/* Pie */
-.footer {
-  margin-top: 22px;
-  font-size: 0.95rem;
-  color: #555;
-  text-align: right;
+/* Foto padres dentro del popup */
+.parents-img-popup {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  border: 3px solid #3399ff;
 }
 
 /* Mensaje sorpresa */
@@ -161,11 +167,45 @@ body {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(6px);
-  background: rgba(255, 192, 203, 0.25);
+  background: rgba(173, 216, 230, 0.25);
   justify-content: center;
   align-items: center;
   z-index: 100;
 }
 
 /* Contenedor del mensaje */
+.surprise-content {
+  background: #f0f8ff;
+  padding: 30px;
+  width: 90%;
+  max-width: 480px;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  text-align: center;
+  border: 3px solid #3399ff;
+  animation: slideUp 0.6s ease-out;
+}
 
+/* Animación elegante */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón cerrar */
+.close-btn {
+  margin-top: 25px;
+  background: #3399ff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.close-btn:hover {
+  transform: scale(1.05);
+  background: #0066cc;
+}
