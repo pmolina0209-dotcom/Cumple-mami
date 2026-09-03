@@ -168,7 +168,7 @@ body {
   border: 3px solid #3399ff;
   border-radius: 18px;
   animation: slideUp 0.6s ease-out;
-  z-index: 20; /* 🔹 asegura que el video esté por encima del fondo */
+  z-index: 50; /* 🔥 asegura que el video esté encima de todo */
 }
 
 .video-frame {
@@ -176,7 +176,7 @@ body {
   height: 260px;
   border-radius: 12px;
   margin-bottom: 20px;
-  z-index: 21; /* 🔹 asegura clics sobre el video */
+  z-index: 51; /* 🔥 clic perfecto */
 }
 
 /* POPUP mensaje sorpresa */
@@ -191,7 +191,7 @@ body {
   background: rgba(173,216,230,0.25);
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 200; /* 🔥 vuelve a estar encima de todo */
 }
 
 .surprise-content {
