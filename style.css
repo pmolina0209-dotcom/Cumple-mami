@@ -117,11 +117,12 @@ body {
   margin-bottom: 10px;
 }
 
+/* MENSAJE JUSTIFICADO */
 .message {
   font-size: 1rem;
   line-height: 1.7;
   color: #444;
-  text-align: justify; /* ✅ Justificado */
+  text-align: justify !important;
 }
 
 /* Botones */
@@ -168,4 +169,19 @@ body {
 .surprise-content {
   background: #fff;
   padding: 25px;
-  width: 
+  width: 85%;
+  max-width: 400px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+  margin-top: 20px;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
