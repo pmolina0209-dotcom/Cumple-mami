@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #cfe8ff; /* Azul cielo suave */
+  background: #cfe8ff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,13 +149,22 @@ body {
   transform: scale(1.05);
 }
 
-/* Foto padres dentro del popup */
-.parents-img-popup {
-  width: 100%;
-  border-radius: 18px;
+/* Imagen padres dentro del popup */
+.parents-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.parents-img-popup {
+  width: 90%;
+  max-width: 320px;
+  border-radius: 18px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
   border: 3px solid #3399ff;
+  object-fit: cover;
+  display: block;
 }
 
 /* Mensaje sorpresa */
