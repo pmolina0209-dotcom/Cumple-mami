@@ -16,14 +16,8 @@ body {
 }
 
 @keyframes fadeInCard {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* Confeti */
@@ -63,12 +57,8 @@ body {
 }
 
 @keyframes confettiFall {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(100%);
-  }
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
 }
 
 /* Título animado con contorno negro elegante y visible */
@@ -152,9 +142,9 @@ body {
 }
 
 @keyframes imgGlow {
-  0% { box-shadow: 0 0 15px rgba(173, 216, 230, 0.4); }
-  50% { box-shadow: 0 0 25px rgba(173, 216, 230, 0.8); }
-  100% { box-shadow: 0 0 15px rgba(173, 216, 230, 0.4); }
+  0% { box-shadow: 0 0 15px rgba(173,216,230,0.4); }
+  50% { box-shadow: 0 0 25px rgba(173,216,230,0.8); }
+  100% { box-shadow: 0 0 15px rgba(173,216,230,0.4); }
 }
 
 /* Globos animados */
@@ -225,6 +215,32 @@ body {
   transform: scale(1.05);
 }
 
+/* VIDEO DENTRO DE LA TARJETA */
+.video-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  padding: 20px;
+  background: #f0f8ff;
+  border: 3px solid #3399ff;
+  border-radius: 18px;
+  animation: slideUp 0.6s ease-out;
+}
+
+.video-frame {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .video-frame {
+    height: 200px;
+  }
+}
+
 /* Imagen padres dentro del popup */
 .parents-container {
   display: flex;
@@ -260,7 +276,7 @@ body {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(6px);
-  background: rgba(173, 216, 230, 0.25);
+  background: rgba(173,216,230,0.25);
   justify-content: center;
   align-items: center;
   z-index: 100;
@@ -281,46 +297,6 @@ body {
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Popup de video */
-.video-popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.4);
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
-}
-
-.video-content {
-  background: #f0f8ff;
-  padding: 20px;
-  width: 90%;
-  max-width: 480px;
-  border-radius: 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  text-align: center;
-  border: 3px solid #3399ff;
-  animation: slideUp 0.6s ease-out;
-}
-
-.video-frame {
-  width: 100%;
-  height: 260px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 480px) {
-  .video-frame {
-    height: 200px;
-  }
 }
 
 /* Botón cerrar */
