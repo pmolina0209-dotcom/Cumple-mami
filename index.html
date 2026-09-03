@@ -51,17 +51,19 @@
 
     <!-- MODAL flotante del video -->
     <div id="videoModal" class="video-modal">
-      <div class="video-modal-content">
+      <div class="video-modal-content video-modal-clear">
         <h2>🎬 Video especial</h2>
 
-        <iframe
-          id="driveVideo"
-          class="video-frame"
-          src="https://drive.google.com/file/d/16m0z2Nm1cUf0Vvuz9g2M7C65RebH2q26/preview"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          playsinline>
-        </iframe>
+        <div class="video-wrapper">
+          <iframe
+            id="driveVideo"
+            class="video-frame"
+            src="https://drive.google.com/file/d/16m0z2Nm1cUf0Vvuz9g2M7C65RebH2q26/preview"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            playsinline>
+          </iframe>
+        </div>
 
         <button class="close-btn" onclick="closeVideoModal()">Cerrar video 💙</button>
       </div>
