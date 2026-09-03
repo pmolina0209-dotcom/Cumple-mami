@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Transición suave al abrir la tarjeta */
+/* Transición suave */
 .card-transition {
   animation: fadeInCard 1s ease-out;
 }
@@ -20,7 +20,7 @@ body {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Título animado con contorno negro elegante y visible */
+/* Título animado */
 .animated-title {
   font-size: 2.4rem;
   text-align: center;
@@ -34,19 +34,12 @@ body {
     -3px  3px 0 #000,
      3px  3px 0 #000,
      0 0 8px rgba(0,0,0,0.7);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.animated-title:hover,
-.animated-title:active {
-  filter: drop-shadow(0 0 18px #ffffff);
-  transform: scale(1.08);
 }
 
 @keyframes glow {
-  0% { text-shadow: 0 0 10px #fff, 0 0 20px #80bfff; }
-  50% { text-shadow: 0 0 20px #fff, 0 0 30px #3399ff; }
-  100% { text-shadow: 0 0 10px #fff, 0 0 20px #80bfff; }
+  0% { text-shadow: 0 0 10px #fff; }
+  50% { text-shadow: 0 0 20px #3399ff; }
+  100% { text-shadow: 0 0 10px #fff; }
 }
 
 @keyframes floatTitle {
@@ -67,7 +60,6 @@ body {
   background-size: 140px;
   opacity: 0.25;
   animation: orchidsFloat 18s linear infinite;
-  z-index: 0;
 }
 
 @keyframes orchidsFloat {
@@ -85,8 +77,6 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
   text-align: center;
   border: 3px solid #3399ff;
-  position: relative;
-  z-index: 10;
   margin-top: 20px;
 }
 
@@ -95,22 +85,14 @@ body {
   width: 100%;
   border-radius: 18px;
   margin-bottom: 15px;
-  animation: imgGlow 3s ease-in-out infinite;
 }
 
-@keyframes imgGlow {
-  0% { box-shadow: 0 0 15px rgba(173,216,230,0.4); }
-  50% { box-shadow: 0 0 25px rgba(173,216,230,0.8); }
-  100% { box-shadow: 0 0 15px rgba(173,216,230,0.4); }
-}
-
-/* Globos animados */
+/* Globos */
 .balloon {
   position: fixed;
   font-size: 2.5rem;
   animation: float 7s ease-in-out infinite, sway 3s ease-in-out infinite;
   opacity: 0.8;
-  z-index: 1;
 }
 
 @keyframes float {
@@ -128,32 +110,6 @@ body {
 .b2 { left: 50%; animation-duration: 11s; }
 .b3 { left: 80%; animation-duration: 8s; }
 
-/* Textos */
-.title {
-  font-size: 1.9rem;
-  margin-bottom: 8px;
-  color: #0066cc;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 18px;
-  color: #3399ff;
-}
-
-.decor {
-  font-size: 2.1rem;
-  margin-bottom: 10px;
-}
-
-/* Mensaje */
-.message {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #444;
-  text-align: justify !important;
-}
-
 /* Botones */
 .video-btn, .surprise-btn {
   background: #3399ff;
@@ -164,7 +120,6 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin-top: 20px;
-  transition: transform 0.2s;
   width: 100%;
 }
 
@@ -172,54 +127,8 @@ body {
   transform: scale(1.05);
 }
 
-/* VIDEO dentro de la tarjeta */
-.video-container {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 25px;
-  padding: 20px;
-  background: #f0f8ff;
-  border: 3px solid #3399ff;
-  border-radius: 18px;
-  animation: slideUp 0.6s ease-out;
-}
-
-.video-frame {
-  width: 100%;
-  height: 260px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-/* Imagen padres dentro del popup */
-.parents-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.parents-img-popup {
-  width: 50%;
-  max-width: 180px;
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  border: 3px solid #3399ff;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: fadeInImg 0.8s ease forwards;
-}
-
-@keyframes fadeInImg {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Popup mensaje sorpresa */
-.surprise {
+/* POPUP general (video y mensaje sorpresa) */
+.popup {
   display: none;
   position: fixed;
   top: 0;
@@ -233,7 +142,8 @@ body {
   z-index: 100;
 }
 
-.surprise-content {
+/* Contenido del popup */
+.popup-content {
   background: #f0f8ff;
   padding: 30px;
   width: 90%;
@@ -250,6 +160,39 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Video dentro del popup */
+.video-frame {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Imagen padres */
+.parents-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.parents-img-popup {
+  width: 50%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  border: 3px solid #3399ff;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeInImg 0.8s ease forwards;
+}
+
+@keyframes fadeInImg {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* Botón cerrar */
 .close-btn {
   margin-top: 25px;
@@ -260,7 +203,6 @@ body {
   font-size: 1rem;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
 }
 
 .close-btn:hover {
