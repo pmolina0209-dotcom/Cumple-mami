@@ -41,26 +41,10 @@
       Feliz cumpleaños, con todo mi corazón. 💙
     </p>
 
-    <!-- Botón que muestra el video dentro de la tarjeta -->
-    <button class="video-btn" onclick="toggleVideo()">
+    <button class="video-btn" onclick="showVideo()">
       🎬 Ver video especial
     </button>
 
-    <!-- VIDEO DENTRO DE LA TARJETA -->
-    <div id="videoContainer" class="video-container">
-      <h2>🎬 Video especial</h2>
-
-      <iframe 
-        class="video-frame"
-        src="https://drive.google.com/file/d/1SxruDwqSyLm-4MHMcswH3Q9CzAlga2Sk/preview"
-        allow="autoplay"
-        allowfullscreen>
-      </iframe>
-
-      <button class="close-btn" onclick="toggleVideo()">Cerrar video 💙</button>
-    </div>
-
-    <!-- Botón mensaje sorpresa -->
     <button class="surprise-btn" onclick="showSurprise()">
       💙 Mensaje sorpresa
     </button>
@@ -71,9 +55,25 @@
     </p>
   </div>
 
+  <!-- POPUP VIDEO -->
+  <div id="videoPopup" class="popup">
+    <div class="popup-content">
+      <h2>🎬 Video especial</h2>
+
+      <iframe 
+        class="video-frame"
+        src="https://drive.google.com/file/d/1SxruDwqSyLm-4MHMcswH3Q9CzAlga2Sk/preview"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+
+      <button class="close-btn" onclick="closeVideo()">Cerrar video 💙</button>
+    </div>
+  </div>
+
   <!-- POPUP MENSAJE SORPRESA -->
-  <div id="surprise" class="surprise">
-    <div class="surprise-content">
+  <div id="surprise" class="popup">
+    <div class="popup-content">
 
       <h2>💙 Mensaje de tu familia 💙</h2>
 
@@ -97,9 +97,12 @@
   </div>
 
   <script>
-    function toggleVideo() {
-      const video = document.getElementById("videoContainer");
-      video.style.display = (video.style.display === "flex") ? "none" : "flex";
+    function showVideo() {
+      document.getElementById("videoPopup").style.display = "flex";
+    }
+
+    function closeVideo() {
+      document.getElementById("videoPopup").style.display = "none";
     }
 
     function showSurprise() {
