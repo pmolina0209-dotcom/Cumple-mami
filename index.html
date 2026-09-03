@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="card-transition">
+
+  <!-- Confeti -->
+  <div class="confetti"></div>
 
   <h1 class="animated-title">🎉 Feliz Cumpleaños 🎉</h1>
 
@@ -41,7 +44,7 @@
       Feliz cumpleaños, con todo mi corazón. 💙
     </p>
 
-    <button class="video-btn" onclick="openVideo()">
+    <button class="video-btn" onclick="showVideo()">
       🎬 Ver video especial
     </button>
 
@@ -55,13 +58,12 @@
     </p>
   </div>
 
-  <!-- Mensaje sorpresa -->
+  <!-- Popup mensaje sorpresa -->
   <div id="surprise" class="surprise">
     <div class="surprise-content">
 
       <h2>💙 Mensaje de tu familia 💙</h2>
 
-      <!-- Imagen padres centrada -->
       <div class="parents-container">
         <img src="padres.jpg" alt="Padres" class="parents-img-popup">
       </div>
@@ -81,11 +83,29 @@
     </div>
   </div>
 
+  <!-- Popup de video -->
+  <div id="videoPopup" class="video-popup">
+    <div class="video-content">
+      <h2>🎬 Video especial</h2>
+
+      <iframe 
+        src="https://1drv.ms/v/c/91EA20E7FB7BF08F/IQBGtY3HbyWtSbHLZjhsOfJoAZx8flyynxXKbuOP5xpvkyQ?e=txPVOc"
+        frameborder="0"
+        allowfullscreen
+        class="video-frame">
+      </iframe>
+
+      <button class="close-btn" onclick="closeVideo()">Cerrar video 💙</button>
+    </div>
+  </div>
+
   <script>
-    function openVideo() {
-      window.open(
-        "https://1drv.ms/v/c/91EA20E7FB7BF08F/IQBGtY3HbyWtSbHLZjhsOfJoAZx8flyynxXKbuOP5xpvkyQ?e=txPVOc"
-      );
+    function showVideo() {
+      document.getElementById("videoPopup").style.display = "flex";
+    }
+
+    function closeVideo() {
+      document.getElementById("videoPopup").style.display = "none";
     }
 
     function showSurprise() {
@@ -95,6 +115,11 @@
     function closeSurprise() {
       document.getElementById("surprise").style.display = "none";
     }
+  </script>
+
+</body>
+</html>
+
   </script>
 
 </body>
