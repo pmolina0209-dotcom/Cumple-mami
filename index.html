@@ -41,10 +41,24 @@
       Feliz cumpleaños, con todo mi corazón. 💙
     </p>
 
-    <!-- Botón que abre el video en nueva ventana -->
-    <button class="video-btn" onclick="openVideo()">
+    <!-- Botón que muestra el video dentro de la tarjeta -->
+    <button class="video-btn" onclick="toggleVideo()">
       🎬 Ver video especial
     </button>
+
+    <!-- VIDEO DENTRO DE LA TARJETA -->
+    <div id="videoContainer" class="video-container">
+      <h2>🎬 Video especial</h2>
+
+      <iframe 
+        class="video-frame"
+        src="https://drive.google.com/file/d/1SxruDwqSyLm-4MHMcswH3Q9CzAlga2Sk/preview"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+
+      <button class="close-btn" onclick="toggleVideo()">Cerrar video 💙</button>
+    </div>
 
     <!-- Botón mensaje sorpresa -->
     <button class="surprise-btn" onclick="showSurprise()">
@@ -83,11 +97,9 @@
   </div>
 
   <script>
-    function openVideo() {
-      window.open(
-        "https://1drv.ms/v/c/91EA20E7FB7BF08F/IQBGtY3HbyWtSbHLZjhsOfJoAZx8flyynxXKbuOP5xpvkyQ?e=fC6aIl",
-        "_blank"
-      );
+    function toggleVideo() {
+      const video = document.getElementById("videoContainer");
+      video.style.display = (video.style.display === "flex") ? "none" : "flex";
     }
 
     function showSurprise() {
